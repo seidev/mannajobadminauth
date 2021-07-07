@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mannajob.mapper.MemberMapper">
+	<select id="LoginSelect" resultType="int">
+		SELECT COUNT(ad_id) FROM admin WHERE ad_id = #{ad_id}
+	</select>
+	
+	<select id="SecretLogin" resultType="com.mannajob.domain.MemberVO">
+		SELECT ad_id, ad_passwd FROM admin WHERE ad_id = #{ad_id}
+	</select>
+	
+	<select id="memberCheck" resultType="int">
+		SELECT count(m_id) FROM admin WHERE ad_id = #{ad_id}
+	</select>
+</mapper>
